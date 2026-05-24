@@ -66,19 +66,19 @@ export default function Hero() {
 
           </p>
 
-          <h1 className="text-4xl sm:text-5xl md:text-8xl font-black luxury-font leading-tight mb-6 md:mb-8">
+          <h1 className="text-4xl sm:text-5xl md:text-8xl font-black leading-tight mb-6 md:mb-8">
 
             رحلات فاخرة <br />
 
-            إلى شرق آسيا
+            إلى أجمل وجهات العالم
 
           </h1>
 
           <p className="text-gray-300 text-base sm:text-lg md:text-2xl max-w-3xl mx-auto mb-10 md:mb-12 leading-loose">
 
-            استمتع بتجربة سياحية عالمية
-            بتصميم عصري وخدمات فاخرة
-            مصممة خصيصًا لك.
+            تجارب سياحية مصممة بعناية
+            لعشاق الفخامة والاسترخاء
+            بأفضل الوجهات العالمية.
 
           </p>
 
@@ -86,14 +86,21 @@ export default function Hero() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6">
 
-            <button className="w-full sm:w-auto bg-yellow-400 text-black px-7 md:px-10 py-4 md:py-5 rounded-full text-base md:text-xl font-black hover:scale-105 transition duration-300">
+            {/* EXPLORE */}
+
+            <a
+              href="#packages"
+              className="w-full sm:w-auto bg-yellow-400 text-black px-7 md:px-10 py-4 md:py-5 rounded-full text-base md:text-xl font-black hover:scale-105 transition duration-300 text-center"
+            >
 
               استكشف الرحلات
 
-            </button>
+            </a>
+
+            {/* WHATSAPP */}
 
             <a
-              href="https://wa.me/966500000000"
+              href="https://wa.me/966551268610"
               target="_blank"
               className="w-full sm:w-auto border border-white/20 backdrop-blur-xl px-7 md:px-10 py-4 md:py-5 rounded-full text-base md:text-xl hover:bg-white/10 transition duration-300 text-center"
             >
@@ -109,5 +116,6 @@ export default function Hero() {
       </Parallax>
 
     </section>
+
   );
 }

@@ -1,69 +1,15 @@
+import type { Metadata } from "next";
+import { Cairo } from "next/font/google";
 import "./globals.css";
 
-import type {
-  Metadata,
-} from "next";
+const cairo = Cairo({
+  subsets: ["arabic"],
+  weight: ["300", "400", "600", "700", "800"],
+});
 
 export const metadata: Metadata = {
-
-  title:
-    "YallSafer | رحلات سياحية فاخرة",
-
-  description:
-    "رحلات فاخرة إلى شرق آسيا بتجربة سياحية استثنائية وخدمات VIP.",
-
-  keywords: [
-
-    "سياحة",
-    "ماليزيا",
-    "تايلند",
-    "رحلات",
-    "سفر",
-    "شرق آسيا",
-    "Luxury Travel",
-
-  ],
-
-  openGraph: {
-
-    title:
-      "YallSafer",
-
-    description:
-      "رحلات فاخرة وتجارب سياحية استثنائية.",
-
-    images: [
-
-      {
-        url:
-          "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
-      },
-
-    ],
-
-    type: "website",
-
-  },
-
-  twitter: {
-
-    card:
-      "summary_large_image",
-
-    title:
-      "YallSafer",
-
-    description:
-      "رحلات فاخرة إلى شرق آسيا",
-
-    images: [
-
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
-
-    ],
-
-  },
-
+  title: "YallSafer",
+  description: "رحلات سياحية فاخرة",
 };
 
 export default function RootLayout({
@@ -71,18 +17,11 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-
   return (
-
-    <html lang="ar">
-
-      <body>
-
+    <html lang="ar" dir="rtl">
+      <body className={cairo.className}>
         {children}
-
       </body>
-
     </html>
-
   );
 }
