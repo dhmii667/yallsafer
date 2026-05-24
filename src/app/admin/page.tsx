@@ -34,7 +34,7 @@ export default function AdminPage() {
     );
 
     const uploadRes = await fetch(
-      "http://127.0.0.1:8000/upload",
+      "https://yallsafer-production.up.railway.app/upload",
       {
 
         method: "POST",
@@ -68,7 +68,7 @@ export default function AdminPage() {
     // إضافة الرحلة
 
     await fetch(
-      "http://127.0.0.1:8000/packages",
+      "https://yallsafer-production.up.railway.app/packages",
       {
 
         method: "POST",

@@ -28,7 +28,9 @@ export default function PackageDetails() {
 
   useEffect(() => {
 
-    fetch(`http://127.0.0.1:8000/packages/${params.id}`)
+    fetch(
+      `https://yallsafer-production.up.railway.app/packages/${params.id}`
+    )
 
       .then((res) => res.json())
 
@@ -59,15 +61,11 @@ export default function PackageDetails() {
 
       <main className="bg-[#030712] min-h-screen text-white overflow-hidden">
 
-        {/* HERO */}
-
         <section className="relative px-4 md:px-6 pt-28 md:pt-32 pb-12 md:pb-16">
 
           <div className="max-w-7xl mx-auto">
 
             <div className="relative rounded-[35px] md:rounded-[45px] overflow-hidden border border-white/10">
-
-              {/* IMAGE */}
 
               <img
                 src={pkg.image}
@@ -75,15 +73,9 @@ export default function PackageDetails() {
                 className="absolute inset-0 w-full h-full object-cover"
               />
 
-              {/* OVERLAY */}
-
               <div className="absolute inset-0 bg-black/60" />
 
-              {/* CONTENT */}
-
               <div className="relative z-10 p-6 md:p-20 min-h-[650px] md:min-h-[700px] flex flex-col justify-between">
-
-                {/* TOP */}
 
                 <div className="max-w-2xl">
 
@@ -107,13 +99,9 @@ export default function PackageDetails() {
 
                 </div>
 
-                {/* INFO CARD */}
-
                 <div className="bg-black/30 border border-white/10 backdrop-blur-2xl rounded-[28px] md:rounded-[35px] p-6 md:p-8 mt-12">
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 items-center">
-
-                    {/* DAYS */}
 
                     <div className="flex items-center gap-4">
 
@@ -141,8 +129,6 @@ export default function PackageDetails() {
 
                     </div>
 
-                    {/* HOTEL */}
-
                     <div className="flex items-center gap-4">
 
                       <div className="w-14 h-14 rounded-2xl bg-yellow-400 flex items-center justify-center shrink-0">
@@ -168,8 +154,6 @@ export default function PackageDetails() {
                       </div>
 
                     </div>
-
-                    {/* PRICE */}
 
                     <div className="flex items-center gap-4">
 
@@ -197,10 +181,8 @@ export default function PackageDetails() {
 
                     </div>
 
-                    {/* BUTTON */}
-
                     <a
-                      href="https://wa.me/966500000000"
+                      href="https://wa.me/966551268610"
                       target="_blank"
                       className="bg-yellow-400 text-black rounded-full py-4 md:py-5 px-6 md:px-10 text-center font-black text-base md:text-lg hover:scale-105 transition duration-300"
                     >
@@ -221,17 +203,11 @@ export default function PackageDetails() {
 
         </section>
 
-        {/* JOURNEY */}
-
         <Journey />
-
-        {/* DAILY */}
 
         <DailyProgram
           program={JSON.parse(pkg.program)}
         />
-
-        {/* FEATURES */}
 
         <Features />
 

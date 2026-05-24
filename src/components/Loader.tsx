@@ -1,74 +1,28 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
-
-export default function Loader({
-  loading,
-}: {
-  loading: boolean;
-}) {
+export default function Loader() {
 
   return (
 
-    <AnimatePresence>
+    <div className="fixed inset-0 bg-[#030712] flex items-center justify-center z-[9999]">
 
-      {loading && (
+      <div className="text-center">
 
-        <motion.div
+        <h1 className="text-5xl md:text-7xl font-black text-yellow-400 luxury-font animate-pulse">
 
-          initial={{
-            opacity: 1,
-          }}
+          YALLSAFER
 
-          exit={{
-            opacity: 0,
-          }}
+        </h1>
 
-          transition={{
-            duration: 1,
-          }}
+        <p className="text-gray-400 mt-6 text-lg">
 
-          className="fixed inset-0 z-[9999] bg-[#030712] flex items-center justify-center"
-        >
+          Loading Luxury Experience...
 
-          <motion.div
+        </p>
 
-            initial={{
-              opacity: 0,
-              y: 40,
-            }}
+      </div>
 
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-
-            transition={{
-              duration: 1,
-            }}
-
-            className="text-center"
-          >
-
-            <h1 className="text-7xl md:text-8xl font-black text-yellow-400 tracking-[0.2em] luxury-font mb-6">
-
-              YALLSAFER
-
-            </h1>
-
-            <p className="text-gray-400 tracking-[0.4em] uppercase">
-
-              Luxury Travel Experience
-
-            </p>
-
-          </motion.div>
-
-        </motion.div>
-
-      )}
-
-    </AnimatePresence>
+    </div>
 
   );
 }

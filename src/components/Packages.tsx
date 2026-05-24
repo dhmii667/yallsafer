@@ -2,177 +2,111 @@
 
 import Link from "next/link";
 
-import {
-  motion,
-} from "framer-motion";
+interface Props {
 
-import {
-  useEffect,
-  useState,
-} from "react";
-
-import Reveal from "@/components/Reveal";
-
-interface Package {
-
-  id: number;
-
-  title: string;
-
-  image: string;
-
-  price: number;
-
-  days: string;
+  packages: any[];
 
 }
 
-export default function Packages() {
-
-  const [packagesData, setPackagesData] = useState<Package[]>([]);
-
-  useEffect(() => {
-
-    fetch("http://127.0.0.1:8000/packages")
-
-      .then((res) => res.json())
-
-      .then((data) => {
-
-        setPackagesData(data);
-
-      });
-
-  }, []);
+export default function Packages({
+  packages,
+}: Props) {
 
   return (
 
-    <Reveal>
+    <section className="py-24 px-4 md:px-6">
 
-      <section className="relative py-32 px-6 overflow-hidden">
+      <div className="max-w-7xl mx-auto">
 
-        <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16">
 
-          {/* TITLE */}
+          <p className="text-yellow-400 tracking-[0.3em] uppercase mb-4">
 
-          <div className="text-center mb-20">
+            Luxury Packages
 
-            <p className="text-yellow-400 tracking-[0.4em] uppercase mb-4">
+          </p>
 
-              Luxury Packages
+          <h2 className="text-4xl md:text-6xl font-black luxury-font">
 
-            </p>
+            البكجات السياحية
 
-            <h2 className="text-5xl md:text-6xl font-black luxury-font">
-
-              أفضل الرحلات السياحية
-
-            </h2>
-
-          </div>
-
-          {/* GRID */}
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-
-            {packagesData.map((item, index) => (
-
-              <motion.div
-
-                key={item.id}
-
-                initial={{
-                  opacity: 0,
-                  y: 80,
-                }}
-
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                }}
-
-                transition={{
-                  duration: 0.8,
-                  delay: index * 0.15,
-                }}
-
-                whileHover={{
-                  y: -12,
-                }}
-
-                className="group relative overflow-hidden rounded-[35px] bg-white/5 border border-white/10 backdrop-blur-xl"
-              >
-
-                {/* IMAGE */}
-
-                <div className="relative overflow-hidden h-[420px]">
-
-                  <img
-                    src={item.image}
-                    alt=""
-                    className="w-full h-full object-cover group-hover:scale-110 transition duration-700"
-                  />
-
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#030712] via-black/10 to-transparent" />
-
-                </div>
-
-                {/* CONTENT */}
-
-                <div className="absolute bottom-0 left-0 w-full p-8">
-
-                  <p className="text-yellow-400 mb-3">
-
-                    {item.days}
-
-                  </p>
-
-                  <h3 className="text-3xl font-black mb-4 luxury-font">
-
-                    {item.title}
-
-                  </h3>
-
-                  <div className="flex items-center justify-between">
-
-                    <span className="text-2xl font-black">
-
-                      {item.price} SAR
-
-                    </span>
-
-                    <Link
-                      href={`/packages/${item.id}`}
-                      className="bg-yellow-400 text-black px-6 py-3 rounded-full font-bold hover:scale-105 transition duration-300"
-                    >
-
-                      التفاصيل
-
-                    </Link>
-
-                  </div>
-
-                </div>
-
-                {/* GLOW */}
-
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-700 pointer-events-none">
-
-                  <div className="absolute -top-20 -right-20 w-60 h-60 bg-yellow-400/20 blur-3xl rounded-full" />
-
-                </div>
-
-              </motion.div>
-
-            ))}
-
-          </div>
+          </h2>
 
         </div>
 
-      </section>
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
 
-    </Reveal>
+          {packages.map((pkg) => (
+
+            <div
+
+              key={pkg.id}
+
+              className="bg-white/5 border border-white/10 rounded-[35px] overflow-hidden backdrop-blur-xl hover:scale-[1.02] transition duration-500"
+            >
+
+              <div className="relative h-[320px] overflow-hidden">
+
+                <img
+                  src={pkg.image}
+                  alt=""
+                  className="w-full h-full object-cover hover:scale-110 transition duration-700"
+                />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
+
+              </div>
+
+              <div className="p-8">
+
+                <h3 className="text-3xl font-black mb-4 luxury-font">
+
+                  {pkg.title}
+
+                </h3>
+
+                <p className="text-gray-300 leading-loose mb-6">
+
+                  {pkg.description}
+
+                </p>
+
+                <div className="flex items-center justify-between mb-8">
+
+                  <span className="text-yellow-400 text-3xl font-black">
+
+                    {pkg.price} SAR
+
+                  </span>
+
+                  <span className="text-gray-400">
+
+                    {pkg.days}
+
+                  </span>
+
+                </div>
+
+                <Link
+                  href={`/packages/${pkg.id}`}
+                  className="block text-center bg-yellow-400 text-black py-4 rounded-full font-black hover:scale-105 transition duration-300"
+                >
+
+                  تفاصيل الرحلة
+
+                </Link>
+
+              </div>
+
+            </div>
+
+          ))}
+
+        </div>
+
+      </div>
+
+    </section>
 
   );
 }

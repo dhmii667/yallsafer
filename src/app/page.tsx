@@ -1,53 +1,70 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import {
+  useEffect,
+  useState,
+} from "react";
 
 import Loader from "@/components/Loader";
-import CursorGlow from "@/components/CursotGlow";
+
 import Hero from "@/components/Hero";
+
 import Packages from "@/components/Packages";
+
 import Navbar from "@/components/Navbar";
+
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 export default function Home() {
 
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] =
+    useState(true);
+
+  const [packages, setPackages] =
+    useState<any[]>([]);
 
   useEffect(() => {
 
-    const timer = setTimeout(() => {
+    fetch(
+      "https://yallsafer-production.up.railway.app/packages"
+    )
 
-      setLoading(false);
+      .then((res) => res.json())
 
-    }, 2500);
+      .then((data) => {
 
-    return () => clearTimeout(timer);
+        setPackages(data);
+
+        setTimeout(() => {
+
+          setLoading(false);
+
+        }, 2000);
+
+      });
 
   }, []);
 
+  if (loading) {
+
+    return <Loader/>;
+
+  }
+
   return (
-    <>
 
-      <Loader loading={loading} />
+    <main className="bg-[#030712] text-white overflow-hidden">
 
-      {!loading && (
+      <Navbar />
 
-        <main className="bg-[#030712] overflow-hidden min-h-screen">
+      <Hero />
 
-          <CursorGlow />
+      <Packages packages={packages} />
 
-          <Navbar />
+      <WhatsAppButton />
 
-          <Hero />
+    </main>
 
-          <Packages />
-
-          <WhatsAppButton />
-
-        </main>
-
-      )}
-
-    </>
   );
+
 }
