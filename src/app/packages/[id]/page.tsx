@@ -1,123 +1,74 @@
 "use client";
 
-import Link from "next/link";
+import { useParams } from "next/navigation";
 
-interface Props {
+const packages = [
+  {
+    id: 1,
+    title: "الصين",
+    description: "رحلة فاخرة إلى الصين",
+  },
 
-  packages: any[];
+  {
+    id: 2,
+    title: "ماليزيا & سنغافورة",
+    description: "رحلة آسيوية فاخرة",
+  },
 
-}
+  {
+    id: 3,
+    title: "تايلند",
+    description: "استرخاء وجزر فاخرة",
+  },
 
-export default function Packages({
-  packages,
-}: Props) {
+  {
+    id: 4,
+    title: "تركيا",
+    description: "طبيعة وتجارب راقية",
+  },
+
+  {
+    id: 5,
+    title: "البرازيل",
+    description: "تجربة لاتينية فاخرة",
+  },
+];
+
+export default function PackagePage() {
+
+  const params = useParams();
+
+  const pkg = packages.find(
+    (item) => item.id === Number(params.id)
+  );
+
+  if (!pkg) {
+
+    return (
+      <div className="min-h-screen bg-black text-white flex items-center justify-center">
+
+        الرحلة غير موجودة
+
+      </div>
+    );
+  }
 
   return (
 
-    <section
-      id="packages"
-      className="py-24 px-4 md:px-6"
-    >
+    <div className="min-h-screen bg-[#030712] text-white p-10">
 
-      <div className="max-w-7xl mx-auto">
+      <h1 className="text-5xl font-black mb-6">
 
-        {/* TITLE */}
+        {pkg.title}
 
-        <div className="text-center mb-16">
+      </h1>
 
-          <p className="text-yellow-400 tracking-[0.3em] uppercase mb-4">
+      <p className="text-2xl text-gray-300">
 
-            Luxury Packages
+        {pkg.description}
 
-          </p>
+      </p>
 
-          <h2 className="text-4xl md:text-6xl font-black">
-
-            البكجات السياحية
-
-          </h2>
-
-        </div>
-
-        {/* GRID */}
-
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
-
-          {packages.map((pkg) => (
-
-            <div
-
-              key={pkg.id}
-
-              className="bg-white/5 border border-white/10 rounded-[35px] overflow-hidden backdrop-blur-xl hover:scale-[1.02] transition duration-500"
-            >
-
-              {/* IMAGE */}
-
-              <div className="relative h-[320px] overflow-hidden">
-
-                <img
-                  src={pkg.image}
-                  alt=""
-                  className="w-full h-full object-cover hover:scale-110 transition duration-700"
-                />
-
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
-
-              </div>
-
-              {/* CONTENT */}
-
-              <div className="p-8">
-
-                <h3 className="text-3xl font-black mb-4">
-
-                  {pkg.title}
-
-                </h3>
-
-                <p className="text-gray-300 leading-loose mb-6">
-
-                  {pkg.description}
-
-                </p>
-
-                <div className="flex items-center justify-between mb-8">
-
-                  <span className="text-yellow-400 text-3xl font-black">
-
-                    {pkg.price} SAR
-
-                  </span>
-
-                  <span className="text-gray-400">
-
-                    {pkg.duration}
-
-                  </span>
-
-                </div>
-
-                <Link
-                  href={`/packages/${pkg.id}`}
-                  className="block text-center bg-yellow-400 text-black py-4 rounded-full font-black hover:scale-105 transition duration-300"
-                >
-
-                  تفاصيل الرحلة
-
-                </Link>
-
-              </div>
-
-            </div>
-
-          ))}
-
-        </div>
-
-      </div>
-
-    </section>
-
+    </div>
   );
 }
