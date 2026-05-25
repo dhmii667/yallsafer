@@ -4,6 +4,9 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Packages from "@/components/Packages";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import Footer from "@/components/Footer";
+import WhatsAppPopup from "@/components/WhatsAppPopup";
+import MouseGlow from "@/components/MouseGlow";
 
 export default function Home() {
   const packages = [
@@ -164,6 +167,9 @@ export default function Home() {
       <Packages packages={packages} />
 
       <WhatsAppButton />
+      <Footer />
+      <WhatsAppPopup />
+      <MouseGlow />
     </main>
   );
 }
