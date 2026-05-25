@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+
 import { Cairo } from "next/font/google";
+
 import "./globals.css";
 
 const cairo = Cairo({
@@ -8,8 +10,60 @@ const cairo = Cairo({
 });
 
 export const metadata: Metadata = {
-  title: "YallSafer",
-  description: "رحلات سياحية فاخرة",
+
+  title: "YallSafer | Luxury Travel",
+
+  description:
+    "رحلات سياحية فاخرة إلى أجمل الوجهات العالمية مع تجارب استثنائية وخدمات VIP.",
+
+  keywords: [
+    "سفر",
+    "سياحة",
+    "رحلات",
+    "Luxury Travel",
+    "Thailand",
+    "Turkey",
+    "Malaysia",
+    "Brazil",
+  ],
+
+  openGraph: {
+
+    title: "YallSafer | Luxury Travel",
+
+    description:
+      "رحلات سياحية فاخرة وتجارب VIP إلى أجمل الوجهات العالمية.",
+
+    url: "https://yallsafer.com",
+
+    siteName: "YallSafer",
+
+    images: [
+      {
+        url: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2070",
+        width: 1200,
+        height: 630,
+      },
+    ],
+
+    locale: "ar_SA",
+
+    type: "website",
+  },
+
+  twitter: {
+
+    card: "summary_large_image",
+
+    title: "YallSafer | Luxury Travel",
+
+    description:
+      "رحلات سياحية فاخرة وتجارب VIP حول العالم.",
+
+    images: [
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2070",
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -17,11 +71,17 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+
   return (
+
     <html lang="ar" dir="rtl">
+
       <body className={cairo.className}>
+
         {children}
+
       </body>
+
     </html>
   );
 }
