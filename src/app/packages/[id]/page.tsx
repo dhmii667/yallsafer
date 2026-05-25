@@ -16,12 +16,21 @@ const packages = [
     price: "14500",
     description:
       "رحلة فاخرة تجمع بين الحداثة الصينية والمعالم التاريخية.",
+
     program: [
-      "شنغهاي",
-      "ديزني لاند",
-      "سور الصين",
+      "الوصول إلى شنغهاي والاستقبال VIP",
+      "جولة برج شنغهاي والأسواق الفاخرة",
+      "زيارة ديزني لاند شنغهاي",
+      "جولة نهرية ومطاعم فاخرة",
+      "السفر إلى هانزو",
+      "بحيرة ويست ليك والطبيعة",
+      "العودة إلى شنغهاي",
+      "الانتقال إلى بكين",
+      "زيارة سور الصين العظيم",
       "القصر المحرم",
-      "تجارب فاخرة",
+      "الأسواق الشعبية والتسوق",
+      "يوم حر وتجارب فاخرة",
+      "العودة إلى أرض الوطن",
     ],
   },
 
@@ -34,12 +43,22 @@ const packages = [
     price: "16800",
     description:
       "مزيج بين الطبيعة الآسيوية والفخامة العصرية.",
+
     program: [
-      "كوالالمبور",
-      "جنتنق",
-      "لنكاوي",
+      "الوصول إلى كوالالمبور",
+      "برجي التوأم والأسواق",
+      "جولة جنتنق",
+      "منتجعات لنكاوي",
+      "الأنشطة البحرية",
+      "يوم استرخاء فاخر",
+      "العودة إلى كوالالمبور",
+      "السفر إلى سنغافورة",
       "مارينا باي",
-      "يونيفرسال",
+      "يونيفرسال ستوديو",
+      "حدائق الخليج",
+      "التسوق الفاخر",
+      "يوم حر",
+      "العودة",
     ],
   },
 
@@ -52,12 +71,20 @@ const packages = [
     price: "9800",
     description:
       "استجمام فاخر بين الجزر والشواطئ التايلندية.",
+
     program: [
-      "بوكيت",
-      "كرابي",
-      "في في",
-      "رحلات بحرية",
-      "منتجعات فاخرة",
+      "الوصول إلى بوكيت",
+      "جولة بحرية خاصة",
+      "جزيرة في في",
+      "أنشطة بحرية",
+      "منتجع فاخر",
+      "الانتقال إلى كرابي",
+      "جزر هونغ",
+      "استجمام وشواطئ",
+      "جولة ليلية",
+      "يوم حر",
+      "تسوق ومطاعم",
+      "العودة",
     ],
   },
 
@@ -70,12 +97,17 @@ const packages = [
     price: "8900",
     description:
       "تجربة تركية تجمع الطبيعة والمعالم الراقية.",
+
     program: [
-      "إسطنبول",
-      "البوسفور",
-      "سبانجا",
-      "طرابزون",
+      "الوصول إلى إسطنبول",
+      "البوسفور والأسواق",
+      "سبانجا والمعشوقية",
+      "جولة السلطان أحمد",
+      "السفر إلى طرابزون",
       "أوزنجول",
+      "مرتفعات حيدر نبي",
+      "يوم حر وتسوق",
+      "العودة",
     ],
   },
 
@@ -88,12 +120,23 @@ const packages = [
     price: "21900",
     description:
       "رحلة لاتينية فاخرة مليئة بالشواطئ والتجارب.",
+
     program: [
-      "ريو دي جانيرو",
-      "كوباكابانا",
-      "جبل السكر",
-      "مطاعم فاخرة",
+      "الوصول إلى ريو",
+      "شاطئ كوباكابانا",
+      "تمثال المسيح",
+      "جولة جبل السكر",
+      "رحلات بحرية",
+      "مطاعم وتجارب فاخرة",
+      "أنشطة شاطئية",
+      "يوم حر",
+      "التسوق",
+      "منتجعات فاخرة",
+      "جولات ليلية",
       "استجمام",
+      "جولة خاصة",
+      "يوم مفتوح",
+      "العودة",
     ],
   },
 
@@ -118,7 +161,7 @@ export default function PackagePage() {
 
   return (
 
-    <main className="bg-[#030712] text-white min-h-screen">
+    <main className="bg-[#030712] text-white min-h-screen overflow-hidden">
 
       {/* HERO */}
 
@@ -169,13 +212,30 @@ export default function PackagePage() {
 
       </section>
 
+      {/* CURVE */}
+
+      <div className="relative -mt-1">
+
+        <svg
+          viewBox="0 0 1440 180"
+          className="w-full h-auto fill-[#030712]"
+        >
+
+          <path d="M0,96L80,106.7C160,117,320,139,480,138.7C640,139,800,117,960,101.3C1120,85,1280,75,1360,69.3L1440,64L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path>
+
+        </svg>
+
+      </div>
+
       {/* DETAILS */}
 
       <section className="max-w-6xl mx-auto px-6 py-24">
 
         <div className="grid md:grid-cols-2 gap-10">
 
-          <div className="bg-white/5 border border-white/10 rounded-[30px] p-10">
+          {/* INFO */}
+
+          <div className="bg-white/5 border border-white/10 rounded-[30px] p-10 backdrop-blur-xl">
 
             <h2 className="text-4xl font-black mb-8">
 
@@ -213,40 +273,56 @@ export default function PackagePage() {
 
           </div>
 
-          {/* PROGRAM */}
+          {/* TIMELINE */}
 
-          <div className="bg-white/5 border border-white/10 rounded-[30px] p-10">
+          <div className="bg-white/5 border border-white/10 rounded-[30px] p-10 backdrop-blur-xl">
 
-            <h2 className="text-4xl font-black mb-8">
+            <h2 className="text-4xl font-black mb-10">
 
               الجدول السياحي
 
             </h2>
 
-            <div className="space-y-5">
+            <div className="relative">
 
-              {pkg.program.map((day, index) => (
+              {/* LINE */}
 
-                <div
-                  key={index}
-                  className="flex items-center gap-4 border-b border-white/10 pb-4"
-                >
+              <div className="absolute right-5 top-0 w-[2px] h-full bg-yellow-400/30" />
 
-                  <div className="w-12 h-12 rounded-full bg-yellow-400 text-black flex items-center justify-center font-black">
+              <div className="space-y-10">
 
-                    {index + 1}
+                {pkg.program.map((day, index) => (
+
+                  <div
+                    key={index}
+                    className="relative flex items-start gap-6"
+                  >
+
+                    {/* NUMBER */}
+
+                    <div className="relative z-10 min-w-[44px] h-[44px] rounded-full bg-yellow-400 text-black flex items-center justify-center font-black shadow-[0_0_25px_rgba(250,204,21,0.5)]">
+
+                      {index + 1}
+
+                    </div>
+
+                    {/* CONTENT */}
+
+                    <div className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-[24px] px-6 py-5 w-full hover:bg-white/10 transition duration-300">
+
+                      <p className="text-lg text-gray-300 leading-loose">
+
+                        {day}
+
+                      </p>
+
+                    </div>
 
                   </div>
 
-                  <p className="text-lg text-gray-300">
+                ))}
 
-                    {day}
-
-                  </p>
-
-                </div>
-
-              ))}
+              </div>
 
             </div>
 
