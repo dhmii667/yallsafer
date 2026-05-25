@@ -90,6 +90,19 @@ export default function Hero() {
 
             <a
               href="#packages"
+              onClick={(e) => {
+
+                e.preventDefault();
+
+                document
+                  .getElementById("packages")
+                  ?.scrollIntoView({
+
+                    behavior: "smooth",
+
+                  });
+
+              }}
               className="w-full sm:w-auto bg-yellow-400 text-black px-7 md:px-10 py-4 md:py-5 rounded-full text-base md:text-xl font-black hover:scale-105 transition duration-300 text-center"
             >
 
@@ -116,6 +129,5 @@ export default function Hero() {
       </Parallax>
 
     </section>
-
   );
 }

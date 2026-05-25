@@ -14,9 +14,14 @@ export default function Packages({
 
   return (
 
-    <section className="py-24 px-4 md:px-6">
+    <section
+      id="packages"
+      className="py-24 px-4 md:px-6"
+    >
 
       <div className="max-w-7xl mx-auto">
+
+        {/* TITLE */}
 
         <div className="text-center mb-16">
 
@@ -26,13 +31,15 @@ export default function Packages({
 
           </p>
 
-          <h2 className="text-4xl md:text-6xl font-black luxury-font">
+          <h2 className="text-4xl md:text-6xl font-black">
 
             البكجات السياحية
 
           </h2>
 
         </div>
+
+        {/* GRID */}
 
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
 
@@ -44,6 +51,8 @@ export default function Packages({
 
               className="bg-white/5 border border-white/10 rounded-[35px] overflow-hidden backdrop-blur-xl hover:scale-[1.02] transition duration-500"
             >
+
+              {/* IMAGE */}
 
               <div className="relative h-[320px] overflow-hidden">
 
@@ -57,9 +66,11 @@ export default function Packages({
 
               </div>
 
+              {/* CONTENT */}
+
               <div className="p-8">
 
-                <h3 className="text-3xl font-black mb-4 luxury-font">
+                <h3 className="text-3xl font-black mb-4">
 
                   {pkg.title}
 
@@ -81,7 +92,7 @@ export default function Packages({
 
                   <span className="text-gray-400">
 
-                    {pkg.days}
+                    {pkg.duration}
 
                   </span>
 
@@ -107,6 +118,5 @@ export default function Packages({
       </div>
 
     </section>
-
   );
 }
