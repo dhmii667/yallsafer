@@ -2,6 +2,10 @@
 
 import Link from "next/link";
 
+import {
+  motion,
+} from "framer-motion";
+
 interface Props {
 
   packages: any[];
@@ -23,7 +27,28 @@ export default function Packages({
 
         {/* TITLE */}
 
-        <div className="text-center mb-16">
+        <motion.div
+
+          initial={{
+            opacity: 0,
+            y: 40,
+          }}
+
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+
+          transition={{
+            duration: 0.8,
+          }}
+
+          viewport={{
+            once: true,
+          }}
+
+          className="text-center mb-16"
+        >
 
           <p className="text-yellow-400 tracking-[0.3em] uppercase mb-4">
 
@@ -37,19 +62,40 @@ export default function Packages({
 
           </h2>
 
-        </div>
+        </motion.div>
 
         {/* GRID */}
 
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
 
-          {packages.map((pkg) => (
+          {packages.map((pkg, index) => (
 
-            <div
+            <motion.div
 
               key={pkg.id}
 
-              className="bg-white/5 border border-white/10 rounded-[35px] overflow-hidden backdrop-blur-xl hover:scale-[1.02] transition duration-500"
+              initial={{
+                opacity: 0,
+                y: 60,
+                filter: "blur(10px)",
+              }}
+
+              whileInView={{
+                opacity: 1,
+                y: 0,
+                filter: "blur(0px)",
+              }}
+
+              transition={{
+                duration: 0.8,
+                delay: index * 0.15,
+              }}
+
+              viewport={{
+                once: true,
+              }}
+
+              className="bg-white/5 border border-white/10 rounded-[35px] overflow-hidden backdrop-blur-xl hover:scale-[1.02] hover:-translate-y-2 transition duration-500"
             >
 
               {/* IMAGE */}
@@ -109,7 +155,7 @@ export default function Packages({
 
               </div>
 
-            </div>
+            </motion.div>
 
           ))}
 
