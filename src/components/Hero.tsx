@@ -57,14 +57,18 @@ export default function Hero() {
             duration: 1.2,
           }}
 
-          className="relative z-10 text-center px-4 sm:px-6 max-w-5xl mx-auto"
+          className="relative z-10 text-center px-4 sm:px-6 max-w-6xl mx-auto"
         >
+
+          {/* TOP TEXT */}
 
           <p className="text-yellow-400 tracking-[0.25em] md:tracking-[0.4em] uppercase mb-5 md:mb-6 text-xs sm:text-sm md:text-base">
 
             Luxury Travel Experience
 
           </p>
+
+          {/* TITLE */}
 
           <h1 className="text-4xl sm:text-5xl md:text-8xl font-black leading-tight mb-6 md:mb-8">
 
@@ -74,6 +78,8 @@ export default function Hero() {
 
           </h1>
 
+          {/* DESCRIPTION */}
+
           <p className="text-gray-300 text-base sm:text-lg md:text-2xl max-w-3xl mx-auto mb-10 md:mb-12 leading-loose">
 
             تجارب سياحية مصممة بعناية
@@ -81,6 +87,60 @@ export default function Hero() {
             بأفضل الوجهات العالمية.
 
           </p>
+
+          {/* STATS */}
+
+          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10 mb-12">
+
+            <div className="bg-white/10 border border-white/10 backdrop-blur-xl rounded-3xl px-8 py-5">
+
+              <h3 className="text-4xl font-black text-yellow-400 mb-2">
+
+                +850
+
+              </h3>
+
+              <p className="text-gray-300">
+
+                عميل سعيد
+
+              </p>
+
+            </div>
+
+            <div className="bg-white/10 border border-white/10 backdrop-blur-xl rounded-3xl px-8 py-5">
+
+              <h3 className="text-4xl font-black text-yellow-400 mb-2">
+
+                +120
+
+              </h3>
+
+              <p className="text-gray-300">
+
+                رحلة فاخرة
+
+              </p>
+
+            </div>
+
+            <div className="bg-white/10 border border-white/10 backdrop-blur-xl rounded-3xl px-8 py-5">
+
+              <h3 className="text-4xl font-black text-yellow-400 mb-2">
+
+                5★
+
+              </h3>
+
+              <p className="text-gray-300">
+
+                تقييم العملاء
+
+              </p>
+
+            </div>
+
+          </div>
 
           {/* BUTTONS */}
 
@@ -103,7 +163,7 @@ export default function Hero() {
                   });
 
               }}
-              className="w-full sm:w-auto bg-yellow-400 text-black px-7 md:px-10 py-4 md:py-5 rounded-full text-base md:text-xl font-black hover:scale-105 transition duration-300 text-center"
+              className="w-full sm:w-auto bg-yellow-400 text-black px-7 md:px-10 py-4 md:py-5 rounded-full text-base md:text-xl font-black hover:scale-105 transition duration-300 text-center shadow-[0_0_30px_rgba(250,204,21,0.35)]"
             >
 
               استكشف الرحلات
@@ -113,7 +173,7 @@ export default function Hero() {
             {/* WHATSAPP */}
 
             <a
-              href="https://wa.me/966551268610"
+              href="https://wa.me/966500000000"
               target="_blank"
               className="w-full sm:w-auto border border-white/20 backdrop-blur-xl px-7 md:px-10 py-4 md:py-5 rounded-full text-base md:text-xl hover:bg-white/10 transition duration-300 text-center"
             >
