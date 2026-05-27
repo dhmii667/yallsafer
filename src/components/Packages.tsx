@@ -1,7 +1,5 @@
 "use client";
 
-import Link from "next/link";
-
 import {
   motion,
 } from "framer-motion";
@@ -167,14 +165,36 @@ export default function Packages({
 
                   </div>
 
-                  <Link
-                    href={`/packages/${pkg.id}`}
-                    className="block text-center bg-yellow-400 text-black py-4 rounded-full font-black hover:scale-105 transition duration-300 shadow-[0_0_30px_rgba(250,204,21,0.35)]"
-                  >
+                  {/* BUTTONS */}
 
-                    تفاصيل الرحلة
+                  <div className="flex flex-col gap-4">
 
-                  </Link>
+                    {/* DETAILS */}
+
+                    <a
+                      href={`/packages/${pkg.id}`}
+                      className="block text-center bg-white/10 border border-white/10 py-4 rounded-full font-black hover:bg-white/20 transition duration-300"
+                    >
+
+                      تفاصيل الرحلة
+
+                    </a>
+
+                    {/* BOOKING */}
+
+                    <a
+                      href={`https://wa.me/966551268610?text=${encodeURIComponent(
+                        `أهلاً، أرغب بحجز رحلة ${pkg.title} لمدة ${pkg.duration}`
+                      )}`}
+                      target="_blank"
+                      className="block text-center bg-yellow-400 text-black py-4 rounded-full font-black hover:scale-105 transition duration-300 shadow-[0_0_30px_rgba(250,204,21,0.35)]"
+                    >
+
+                      احجز الآن
+
+                    </a>
+
+                  </div>
 
                 </div>
 
