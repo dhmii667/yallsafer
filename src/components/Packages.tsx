@@ -20,7 +20,7 @@ export default function Packages({
 
     <>
 
-      {/* TOP CURVE */}
+      {/* CURVE */}
 
       <div className="relative -mt-1">
 
@@ -114,8 +114,12 @@ export default function Packages({
                   once: true,
                 }}
 
-                className="bg-white/5 border border-white/10 rounded-[35px] overflow-hidden backdrop-blur-xl hover:scale-[1.02] hover:-translate-y-2 transition duration-500"
+                className="group relative bg-white/5 border border-white/10 rounded-[35px] overflow-hidden backdrop-blur-xl hover:scale-[1.03] hover:-translate-y-3 transition duration-500"
               >
+
+                {/* GLOW */}
+
+                <div className="absolute inset-0 bg-yellow-400/0 group-hover:bg-yellow-400/5 transition duration-500" />
 
                 {/* IMAGE */}
 
@@ -124,7 +128,7 @@ export default function Packages({
                   <img
                     src={pkg.image}
                     alt=""
-                    className="w-full h-full object-cover hover:scale-110 transition duration-700"
+                    className="w-full h-full object-cover group-hover:scale-110 transition duration-700"
                   />
 
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
@@ -133,7 +137,7 @@ export default function Packages({
 
                 {/* CONTENT */}
 
-                <div className="p-8">
+                <div className="relative p-8 z-10">
 
                   <h3 className="text-3xl font-black mb-4">
 
@@ -165,7 +169,7 @@ export default function Packages({
 
                   <Link
                     href={`/packages/${pkg.id}`}
-                    className="block text-center bg-yellow-400 text-black py-4 rounded-full font-black hover:scale-105 transition duration-300"
+                    className="block text-center bg-yellow-400 text-black py-4 rounded-full font-black hover:scale-105 transition duration-300 shadow-[0_0_30px_rgba(250,204,21,0.35)]"
                   >
 
                     تفاصيل الرحلة
