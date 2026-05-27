@@ -5,142 +5,7 @@ import {
   useRouter,
 } from "next/navigation";
 
-const packages = [
-
-  {
-    id: 1,
-    title: "الصين",
-    image:
-      "https://images.unsplash.com/photo-1549692520-acc6669e2f0c?q=80&w=2070",
-    duration: "13 يوم",
-    price: "14500",
-    description:
-      "رحلة فاخرة تجمع بين الحداثة الصينية والمعالم التاريخية.",
-
-    program: [
-      "الوصول إلى شنغهاي والاستقبال VIP",
-      "جولة برج شنغهاي والأسواق الفاخرة",
-      "زيارة ديزني لاند شنغهاي",
-      "جولة نهرية ومطاعم فاخرة",
-      "السفر إلى هانزو",
-      "بحيرة ويست ليك والطبيعة",
-      "العودة إلى شنغهاي",
-      "الانتقال إلى بكين",
-      "زيارة سور الصين العظيم",
-      "القصر المحرم",
-      "الأسواق الشعبية والتسوق",
-      "يوم حر وتجارب فاخرة",
-      "العودة إلى أرض الوطن",
-    ],
-  },
-
-  {
-    id: 2,
-    title: "ماليزيا & سنغافورة",
-    image:
-      "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?q=80&w=2070",
-    duration: "14 يوم",
-    price: "16800",
-    description:
-      "مزيج بين الطبيعة الآسيوية والفخامة العصرية.",
-
-    program: [
-      "الوصول إلى كوالالمبور",
-      "برجي التوأم والأسواق",
-      "جولة جنتنق",
-      "منتجعات لنكاوي",
-      "الأنشطة البحرية",
-      "يوم استرخاء فاخر",
-      "العودة إلى كوالالمبور",
-      "السفر إلى سنغافورة",
-      "مارينا باي",
-      "يونيفرسال ستوديو",
-      "حدائق الخليج",
-      "التسوق الفاخر",
-      "يوم حر",
-      "العودة",
-    ],
-  },
-
-  {
-    id: 3,
-    title: "تايلند",
-    image:
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2070",
-    duration: "12 يوم",
-    price: "9800",
-    description:
-      "استجمام فاخر بين الجزر والشواطئ التايلندية.",
-
-    program: [
-      "الوصول إلى بوكيت",
-      "جولة بحرية خاصة",
-      "جزيرة في في",
-      "أنشطة بحرية",
-      "منتجع فاخر",
-      "الانتقال إلى كرابي",
-      "جزر هونغ",
-      "استجمام وشواطئ",
-      "جولة ليلية",
-      "يوم حر",
-      "تسوق ومطاعم",
-      "العودة",
-    ],
-  },
-
-  {
-    id: 4,
-    title: "تركيا",
-    image:
-      "https://images.unsplash.com/photo-1527838832700-5059252407fa?q=80&w=2070",
-    duration: "9 أيام",
-    price: "8900",
-    description:
-      "تجربة تركية تجمع الطبيعة والمعالم الراقية.",
-
-    program: [
-      "الوصول إلى إسطنبول",
-      "البوسفور والأسواق",
-      "سبانجا والمعشوقية",
-      "جولة السلطان أحمد",
-      "السفر إلى طرابزون",
-      "أوزنجول",
-      "مرتفعات حيدر نبي",
-      "يوم حر وتسوق",
-      "العودة",
-    ],
-  },
-
-  {
-    id: 5,
-    title: "البرازيل",
-    image:
-      "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?q=80&w=2070",
-    duration: "15 يوم",
-    price: "21900",
-    description:
-      "رحلة لاتينية فاخرة مليئة بالشواطئ والتجارب.",
-
-    program: [
-      "الوصول إلى ريو",
-      "شاطئ كوباكابانا",
-      "تمثال المسيح",
-      "جولة جبل السكر",
-      "رحلات بحرية",
-      "مطاعم وتجارب فاخرة",
-      "أنشطة شاطئية",
-      "يوم حر",
-      "التسوق",
-      "منتجعات فاخرة",
-      "جولات ليلية",
-      "استجمام",
-      "جولة خاصة",
-      "يوم مفتوح",
-      "العودة",
-    ],
-  },
-
-];
+import { packages } from "@/data/packages";
 
 export default function PackagePage() {
 
@@ -285,8 +150,6 @@ export default function PackagePage() {
 
             <div className="relative">
 
-              {/* LINE */}
-
               <div className="absolute right-5 top-0 w-[2px] h-full bg-yellow-400/30" />
 
               <div className="space-y-10">
@@ -298,15 +161,11 @@ export default function PackagePage() {
                     className="relative flex items-start gap-6"
                   >
 
-                    {/* NUMBER */}
-
                     <div className="relative z-10 min-w-[44px] h-[44px] rounded-full bg-yellow-400 text-black flex items-center justify-center font-black shadow-[0_0_25px_rgba(250,204,21,0.5)]">
 
                       {index + 1}
 
                     </div>
-
-                    {/* CONTENT */}
 
                     <div className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-[24px] px-6 py-5 w-full hover:bg-white/10 transition duration-300">
 
