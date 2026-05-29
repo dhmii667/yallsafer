@@ -40,9 +40,10 @@ export const metadata: Metadata = {
 
     images: [
       {
-        url: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2070",
+        url: "/og.jpg",
         width: 1200,
         height: 630,
+        alt: "YallSafer Luxury Travel",
       },
     ],
 
@@ -60,10 +61,10 @@ export const metadata: Metadata = {
     description:
       "رحلات سياحية فاخرة وتجارب VIP حول العالم.",
 
-    images: [
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2070",
-    ],
+    images: ["/og.jpg"],
   },
+
+  metadataBase: new URL("https://yallsafer.com"),
 };
 
 export default function RootLayout({
