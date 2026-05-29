@@ -31,11 +31,11 @@ export default function Hero() {
 
       {/* OVERLAY */}
 
-      <div className="absolute inset-0 bg-black/60" />
+      <div className="absolute inset-0 bg-black/60" /> 
 
       {/* GRADIENT */}
 
-      <div className="absolute inset-0 bg-gradient-to-t from-[#030712] via-black/20 to-black/50" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#030712] via-black/20 to-black/50" /> 
 
       {/* CONTENT */}
 

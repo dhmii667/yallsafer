@@ -6,7 +6,6 @@ import Packages from "@/components/Packages";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import WhatsAppPopup from "@/components/WhatsAppPopup";
 import MouseGlow from "@/components/MouseGlow";
-import Particles from "@/components/Particles";
 import ScrollProgress from "@/components/ScrollProgress";
 import Footer from "@/components/Footer";
 
@@ -21,7 +20,7 @@ export default function Home() {
 
       <ScrollProgress />
 
-      <Particles />
+    
 
       <MouseGlow />
 
