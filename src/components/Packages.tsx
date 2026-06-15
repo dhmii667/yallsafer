@@ -69,13 +69,13 @@ export default function Packages({
 
             <p className="text-yellow-400 tracking-[0.3em] uppercase mb-4">
 
-              Luxury Packages
+              Upcoming Trip
 
             </p>
 
             <h2 className="text-4xl md:text-6xl font-black">
 
-              البكجات السياحية
+              الرحلات القادمة
 
             </h2>
 
@@ -122,7 +122,11 @@ export default function Packages({
                 {/* IMAGE */}
 
                 <div className="relative h-[320px] overflow-hidden">
-
+                {pkg.id === 1 && (
+                    <div className="absolute top-4 right-4 z-20 bg-yellow-400 text-black px-4 py-2 rounded-full font-black text-sm">
+                      رحلة اكتوبر 2026 🇨🇳
+                    </div>
+                )}    
                   <img
                     src={pkg.image}
                     alt=""
@@ -159,7 +163,12 @@ export default function Packages({
 
                     <span className="text-gray-400">
 
-                      {pkg.duration}
+                      {pkg.date || pkg.duration}
+                      {pkg.seats && (
+                        <div className="text-gray-300">
+                          {pkg.seats} من {pkg.remaining} متبقي
+                        </div>
+                      )}
 
                     </span>
 

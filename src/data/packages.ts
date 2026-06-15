@@ -7,9 +7,14 @@ export const packages = [
   
       location: "شنغهاي وبكين",
   
-      duration: "13 يوم",
+      date: "اكتوبر 2026",
+
+      seats: 25,
+
+      remaining: 25,
+      status: "التسجيل مفتوح",
   
-      price: "14500",
+      price: "يحدد لاحقاً",
   
       image:
         "https://images.unsplash.com/photo-1549692520-acc6669e2f0c?q=80&w=2070",
